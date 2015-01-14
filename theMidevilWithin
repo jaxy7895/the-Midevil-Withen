@@ -1,0 +1,36 @@
+import random
+import Commands
+
+#variables
+trailRations=7
+HEALTH=100
+attack=Commands.attack()
+DO=Commands.DO()
+eatFood=Commands.eatFood()
+getHealth=Commands.getHealth()
+swordAttack=Commands.swordAttack()
+       
+inventory=["fist","trail rations"]
+
+
+#inputs
+houseMove=raw_input("you see a house and a forest where would you like to go??: ")
+print inventory
+if houseMove=="house":
+   print"you move twords the house"
+   
+elif houseMove=="forest":
+   while 1:
+       clubPickUp=raw_input("""you move to the forest and see a stick that would make a good club,
+would you like to pick it up?: """)
+       if clubPickUp=="yes":
+           inventory.append("club")
+           print"you place the club into your backpack"
+           club=True
+           inventory.remove("fist")
+           print inventory
+           break
+
+       else:
+           print"that is not a valid action"
+       
