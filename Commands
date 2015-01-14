@@ -1,0 +1,73 @@
+#This program is a program compiled of commands for [insert game name here]
+HEALTH=100
+fist=1
+swordDurability=100
+clubDurability=100
+
+def attack():
+    weapon=raw_input("What do you want to use?"+`inventory`+": ")
+    if weapon=='sword':
+        swordAttack()
+    elif weapon=='club':
+        swordAttack()
+
+def DO():
+        dewey=raw_input("what would you like to do?: ")
+        if dewey == "eat" or "food":
+            eatFood()
+
+        else:
+            print('this is not a valid action...')
+
+#eating functions
+def eatFood():
+        global HEALTH
+        if HEALTH == 100:
+            print('you cannot eat the food, you are on a diet')
+    	#check for trail rations
+        elif trailRations > 0:
+            trailRations-1
+            HEALTH
+            HEALTH+=10
+            print("thank you for eating the food...")
+            #print out what health you have
+            print HEALTH
+            
+def getHealth():
+    print HEALTH
+    
+def swordAttack():
+    global swordDurability
+    attack=raw_input("Do you want to attack?: ")
+    while attack=='yes':
+        print "slash"
+        swordDurability=swordDurability-10
+        print swordDurability
+        if swordDurability<=0:
+            attack='no'
+            print "Your sword broke! YOU CANNOT ATTACK AGAIN!"
+            inventory.remove('sword')
+        if attack=='yes':
+            attack=raw_input("Attack again?: ")
+    if attack=='no':
+        return swordDurability
+        if swordDurability<=0:
+            print "Your sword broke!"
+            inventory.remove('sword')
+
+def clubAttack():
+    global clubDurability
+    attack=raw_input("Do you want to attack?: ")
+    while attack=='yes':
+        print "slash"
+        clubDurability=clubDurability-10
+        if clubDurability<=0:
+            print "Your club broke! YOU CANNOT ATTACK AGAIN!"
+            inventory.remove('club')
+            attack='no'
+        attack=raw_input("Attack again?: ")
+        
+    if attack=='no':
+        return clubDurability
+        print clubDurability
+        
