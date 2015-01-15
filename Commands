@@ -1,4 +1,4 @@
-#This program is a program compiled of commands for [insert game name here]
+#This program is a program compiled of commands for The Midevil Within
 HEALTH=100
 fist=1
 swordDurability=100
@@ -12,12 +12,22 @@ def attack():
         swordAttack()
 
 def DO():
-        dewey=raw_input("what would you like to do?: ")
-        if dewey == "eat" or "food":
-            eatFood()
-
-        else:
-            print('this is not a valid action...')
+    start = True
+    if start == True:
+        print 'Welcome to the world of Cameltoelot! Commands you will NEED to know include: DO, eat, attack, getHealth, inventory..'
+        start = False
+    dewey=raw_input("what would you like to do?: ")
+    if dewey == "eat":
+        eatFood()
+    elif dewey == "attack":
+        print 'you cannot attack now.'
+    elif dewey == "health":
+        getHealth()
+    elif dewey == "inventory":
+        global inventory
+        print inventory
+    else:
+        print('this is not a valid action...')
 
 #eating functions
 def eatFood():
