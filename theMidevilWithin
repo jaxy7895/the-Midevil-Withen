@@ -1,23 +1,23 @@
 import random
 import Commands
+import monsterClass
+import rooms
 
 #variables
 trailRations=7
 HEALTH=100
-attack=Commands.attack()
-DO=Commands.DO()
-eatFood=Commands.eatFood()
-getHealth=Commands.getHealth()
-swordAttack=Commands.swordAttack()
-       
+
 inventory=["fist","trail rations"]
 
 
-#inputs
+#start
+Commands.listActions()
+Commands.DO(inventory)
 houseMove=raw_input("you see a house and a forest where would you like to go??: ")
-print inventory
 if houseMove=="house":
    print"you move twords the house"
+   rooms.house()
+   rooms.houseInterior()
    
 elif houseMove=="forest":
    while 1:
@@ -33,4 +33,8 @@ would you like to pick it up?: """)
 
        else:
            print"that is not a valid action"
+
+elif houseMove == 'do':
+   Commands.DO()
+
        
